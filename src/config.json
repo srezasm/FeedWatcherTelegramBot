@@ -1,0 +1,21 @@
+{
+    "bot-token": "[your bot token]",
+    "watch-delay": 15,
+    "log-mail-address": "[yourEm@il.address]",
+    "log-mail-pass": "[your email pass]",
+    "channels": {
+        "[@channel_id]": {
+            "formats": {
+                "[category name]": "[post format]"
+            },
+            "feeds": {
+                "[feed unique name]": {
+                    "name": "[feed display name]",
+                    "category": "[feed category]",
+                    "tags": ["[first_tag]", "[second_tag]"],
+                    "url": "[https://your.feed.url.lol]"
+                }
+            }
+        }
+    }
+}
