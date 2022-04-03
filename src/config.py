@@ -1,53 +1,43 @@
 import json
+import Singleton
 
-def getbottoken():
-    with open('config.json') as fr:
-        return json.load(fr)['bot-token']
+def get_bot_token():
+    return Singleton.config_dic['bot-token']
 
-def getwatchdelay():
-    with open('config.json') as fr:
-        return json.load(fr)['watch-delay']
+def get_watch_delay():
+    return Singleton.config_dic['watch-delay']
 
-def getlogmailaddress():
-    with open('config.json') as fr:
-        return json.load(fr)['log-mail-address']
+def get_log_mail_address():
+    return Singleton.config_dic['log-mail-address']
 
-def getlogmailpass():
-    with open('config.json') as fr:
-        return json.load(fr)['log-mail-pass']
+def get_log_mail_pass():
+    return Singleton.config_dic['log-mail-pass']
 
-def getchannels():
-    with open('config.json') as fr:
-        return list(json.load(fr)['channels'])
+def get_channels():
+    return list(Singleton.config_dic['channels'])
 
-def getchannelfeeds(channelid):
-    with open('config.json') as fr:
-        return list(json.load(fr)['channels'][channelid]['feeds'])
+def get_channel_feeds(channelid):
+    return list(Singleton.config_dic['channels'][channelid]['feeds'])
 
-def getfeedinfo(channelid, feedname):
-    with open('config.json') as fr:
-        return json.load(fr)['channels'][channelid]['feeds'][feedname]
+def get_feed_info(channelid, feedname):
+    return Singleton.config_dic['channels'][channelid]['feeds'][feedname]
 
-def getfeedcategory(channelid, feedname):
-    with open('config.json') as fr:
-        return json.load(fr)['channels'][channelid]['feeds'][feedname]['category']
+def get_feed_category(channelid, feedname):
+    return Singleton.config_dic['channels'][channelid]['feeds'][feedname]['category']
 
-def getformatbycategory(channelid, category):
-    with open('config.json') as fr:
-        return json.load(fr)['channels'][channelid]['formats'][category]
+def get_format_by_category(channelid, category):
+    return Singleton.config_dic['channels'][channelid]['formats'][category]
 
-def getids():
-    with open('config.json') as fr:
-        return json.load(fr)['idsfile']
+def get_ids():
+    return Singleton.config_dic['idsfile']
 
-def getetags():
-    with open('config.json') as fr:
-        return json.load(fr)['etagsfile']
+def get_etags():
+    return Singleton.config_dic['etagsfile']
 
-def writeids(newids: str):
-    with open(getids(), 'w') as fw:
-            fw.write(newids)
+def write_ids(newids: str):
+    with open(get_ids(), 'w') as fw:
+        fw.write(newids)
 
-def writeetags(newetag: str):
-    with open(getids(), 'w') as fw:
-            fw.write(newetag)
+def write_etags(newetag: str):
+    with open(get_etags(), 'w') as fw:
+        fw.write(newetag)

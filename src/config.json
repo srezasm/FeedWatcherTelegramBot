@@ -18,6 +18,6 @@
             }
         }
     },
-	"idsfile": "./ids.txt",
+    "idsfile": "./ids.txt",
     "etagsfile": "./etags.txt"
 }
