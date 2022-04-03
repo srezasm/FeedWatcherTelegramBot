@@ -17,5 +17,7 @@
                 }
             }
         }
-    }
+    },
+	"idsfile": "./ids.txt",
+    "etagsfile": "./etags.txt"
 }
