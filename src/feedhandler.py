@@ -1,7 +1,7 @@
 import config
 import feedparser
 
-def fetchnewitems(feed):
+def fetch_new_items(feed):
     p = feedparser.parse(feed['url'])
     items = p.entries
     name = feed['name']
