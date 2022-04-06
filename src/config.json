@@ -1,8 +1,7 @@
 {
     "bot-token": "[your bot token]",
-    "watch-delay": 15,
-    "log-mail-address": "[yourEm@il.address]",
-    "log-mail-pass": "[your email pass]",
+    "watch-delay-minutes": 15,
+    "log-account-id": "@your_user_name",
     "channels": {
         "[@channel_id]": {
             "formats": {
@@ -18,6 +17,8 @@
             }
         }
     },
+    "logdir": "./logs/",
+    "mediadir": "./media/",
     "idsfile": "./ids.txt",
     "etagsfile": "./etags.txt"
 }
