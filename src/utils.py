@@ -12,9 +12,14 @@ def get_entry(item, entry_name: str, is_list=False):
     return item[entry_name] if hasattr(item, entry_name) else ([] if is_list else '')
 
 
-def format_str(self: str, **kwargs: object):
+def format_str(string: str, **kwargs: object):
     for key, val in kwargs.items():
-        match = regex.search('{.*?' + key + '.*?}', self).group()
-        self = self.replace(match, val)
-        # print(key + ': ' + val)
-    return self
+        match = regex.search('{[^}]*?' + key + '[^}]*?}', string)
+        if match is None:
+            continue
+        else:
+            match = match.group()
+            val = match.replace('{', '').replace('}', '').replace(key, val)
+
+        string = string.replace(match, val)
+    return string
