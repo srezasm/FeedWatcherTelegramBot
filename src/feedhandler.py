@@ -60,6 +60,9 @@ def fetch_new_items(feed):
         # write new_lines into ids file
         config.writeids('\n'.join(newlines))
 
+        # if feed['category'] == 'youtube':
+        #     # TODO: download youtube video https://www.the-analytics.club/download-youtube-videos-in-python
+        
         return newitems
 
 
